@@ -16,12 +16,20 @@ Console.Write("Введите второе число: ");
 
 int num2 = Convert.ToInt32(Console.ReadLine());
 int max = num1;
+int min = num2;
 
-if (num1 > num2) max = num1;
+if (num1 > num2) 
+{
+    max = num1;
+    min = num2;
+}
 
 else 
 {
     max = num2;
+    min= num1;
 }
 Console.Write("max = ");
 Console.WriteLine(max);
+Console.Write("min = ");
+Console.WriteLine(min);
