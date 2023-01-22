@@ -32,6 +32,20 @@ int ThirdNum(int num)
         }       
            
     }
+    else if(num < -99)
+    {
+        while(num < -999)
+        {
+            num = num / 10;
+        }
+        if(num > -1000)
+        {
+            num = num % 10;
+            
+            Console.WriteLine($"{-num}");
+        }       
+           
+    }
     else
     {
         Console.WriteLine("Третьей цифры нет");
