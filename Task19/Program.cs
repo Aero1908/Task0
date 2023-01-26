@@ -10,6 +10,8 @@
 
 
 
+using System.Data;
+
 Console.WriteLine("Введите число");
 
 int number = Convert.ToInt32(Console.ReadLine());
@@ -17,16 +19,21 @@ int count;
 int reverse = 0;
 int num = number;
 
-while (num > 0 || num < 0)
+int reverseNumber = ReverseNumber(number);
+
+int ReverseNumber(int num)
 {
+    while (num > 0 || num < 0)
+    {
 
-    count = num % 10;
+        count = num % 10;
 
-    reverse = (reverse * 10) + count;
+        reverse = (reverse * 10) + count;
 
-    num = num / 10;
+        num = num / 10;
+    }
+    return reverse;
 }
-
 
 if (number == reverse)
 {
