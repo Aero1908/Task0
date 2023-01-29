@@ -40,10 +40,10 @@ int NumbersSum(int num)
 
 if(number < 0)
 {
-    Console.WriteLine($"{NumbersSum(number)}");
+    Console.WriteLine($"сумма чисел равна -> {NumbersSum(number)}");
 }
 else
 {
-    Console.WriteLine($"{NumbersSum(number) * -1}");
+    Console.WriteLine($"сумма чисел равна -> {NumbersSum(number) * -1}");
 }
 
