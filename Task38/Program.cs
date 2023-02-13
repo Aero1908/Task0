@@ -64,4 +64,4 @@ double maxNumber = MaxNumber(array);
 double minNumber = MinNumber(array);
 PrintArrayDouble(array);
 Console.WriteLine();
-Console.WriteLine($"Сумма чисел равна -> {Math.Round(minNumber + maxNumber, 1)}");
+Console.WriteLine($"Разница чисел равна -> {Math.Round(maxNumber - minNumber, 1)}");
