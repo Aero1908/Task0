@@ -13,31 +13,31 @@ int masSize = Convert.ToInt32(Console.ReadLine());
 
 int createArray = CreateArray(masSize);
 
-int CreateArray(int masSize)
+int CreateArray(int size)
 {
     int res = 0;
-   
-    for (int i = 1; i <= masSize; i++)
+
+    for (int i = 1; i <= size; i++)
     {
         Console.Write($"Введите {i}-ое число массива -> ");
         int masNum = Convert.ToInt32(Console.ReadLine());
-        
-        if(masNum > 0)
+
+        if (masNum > 0)
         {
             res++;
         }
-        
+
     }
     Console.WriteLine();
     Console.WriteLine($"Чиссел больше нуля = {res}");
     return res;
-    
+
 }
 
 // int[] Massive(int masSize, int masNum)
 // {
 //     int[] array = new int[masSize];
-    
+
 //     for (int i = 0; i < masSize; i++)
 //     {
 //         array[i] = masNum;
