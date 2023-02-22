@@ -28,7 +28,7 @@ PrintMatrix(array2D);
 
 Console.WriteLine();
 
-PrintMatrix1(array2D);
+PrintElement(array2D);
 
 
 int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
@@ -61,7 +61,7 @@ void PrintMatrix(int[,] matrix)
 }
 
 
-void PrintMatrix1(int[,] matrix)
+void PrintElement(int[,] matrix)
 {
     if (rowNum < 0 || columnNum < 0)
     {
