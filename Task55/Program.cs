@@ -14,7 +14,7 @@ if (IsSquareMatrix(matrixGenerate))
 }
 else
 {
-    Console.WriteLine("Не возможно обработать массив!");
+    Console.WriteLine("Невозможно обработать массив!");
 }
 
 bool IsSquareMatrix(int[,] matrix)
