@@ -39,34 +39,56 @@ int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
     return matrix;
 }
 
-int [,] MatrixElemSum(int[,] firstMat, int[,] secondMat)
+int[,] MatrixElemSum(int[,] firstMat, int[,] secondMat)
 {
-    int[,] sumMatrix = new int[firstMat.GetLength(0), firstMat.GetLength(1)];
-
-    for (int i = 0; i < sumMatrix.GetLength(0); i++)
+    int[,] sumMatrix = new int[firstMat.GetLength(0), secondMat.GetLength(1)];
+    for (int m = 0; m < sumMatrix.GetLength(0); m++)
     {
-        for (int j = 0; j < sumMatrix.GetLength(1); j++)
+
+
+        for (int i = 0; i < sumMatrix.GetLength(1); i++)
         {
-            sumMatrix[i, j] = firstMat[i, j] + secondMat[i, j];
+
+            int count = 0;
+
+            for (int j = 0; j < secondMat.GetLength(0); j++)
+            {
+                //  i, j             j, i
+                count = count + firstMat[m, j] * secondMat[j, i];
+
+
+            }
+            sumMatrix[m, i] = count;
         }
+        
+        
     }
     return sumMatrix;
 }
 
 
 Console.WriteLine();
-int[,] firstMatrix = CreateMatrixRndInt(5, 4, 0, 10);
-Console.WriteLine("Первый заданный массив:");
+int[,] firstMatrix = CreateMatrixRndInt(3, 3, 0, 10);
+Console.WriteLine("Первая заданная матрица:");
 Console.WriteLine();
 PrintMatrix(firstMatrix);
 Console.WriteLine();
-int[,] secondMatrix = CreateMatrixRndInt(5, 4, 0, 10);
-Console.WriteLine("Второй заданный массив:");
+int[,] secondMatrix = CreateMatrixRndInt(2, 4, 0, 10);
+Console.WriteLine("Вторая заданная матрица:");
 Console.WriteLine();
 PrintMatrix(secondMatrix);
 Console.WriteLine();
-int[,] sumMatrixElem = MatrixElemSum(firstMatrix, secondMatrix);
-Console.WriteLine("Массив с суммой соответствующих элементов заданных массивов: ");
-Console.WriteLine();
-PrintMatrix(sumMatrixElem);
-Console.WriteLine();
+
+// int[,] sumMatrixElem = MatrixElemSum(firstMatrix, secondMatrix);
+
+if (firstMatrix.GetLength(1) == secondMatrix.GetLength(0))
+{
+    int[,] sumMatrixElem = MatrixElemSum(firstMatrix, secondMatrix);
+    Console.WriteLine("Результат произведения двух заданных матриц: ");
+    Console.WriteLine();
+    PrintMatrix(sumMatrixElem);
+    Console.WriteLine();
+}
+else
+Console.WriteLine("Количество столбцов 1-й матрицы должно быть равно количеству строк 2-й матрицы");
+
